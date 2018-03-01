@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dieselgate</title>
+  <link rel="stylesheet" href="./assets/leaflet/leaflet.css">
+  <link rel="stylesheet" href="./assets/ol/ol.css">
+  <link rel="stylesheet" href="./src/css/app.css">
+</head>
+<body>
+  <div id="map">
+    <select id="changestyle">
+      <option value="0">da 0 a 5 morti</option>
+      <option value="1">da 6 a 10 morti</option>
+    </select>
+  </div>
+  <script src="./assets/jquery/jquery-3.3.1.min.js"></script>
+  <script src="./assets/ol/ol.js"></script>
+  <script src="./src/data/city2.js"></script>
+  <script src="./src/data/reticolo_dati.js"></script>
+  <script src="./src/data/stati.js"></script>
+  <script src="./src/js/layers_styles.js"></script>
+  <script src="./src/js/layers.js"></script>
+  <script src="./src/js/map.js"></script>
+  <script>
+    $('#changestyle').change(function() {
+      change_reticolo_style($(this).find(":selected").val())
+    })
+  </script>
+</body>
+</html>
