@@ -153,7 +153,9 @@ var layers_styles = {
           text: new ol.style.Text({
             text: feature.get('name'),
             offsetX: 10,
-            offsetY: 10
+            offsetY: 10,
+            fill: new ol.style.Fill({color: '#000000'}),
+            stroke: new ol.style.Stroke({color: '#ffffff', width: 2}),
           })
         })
       ]
