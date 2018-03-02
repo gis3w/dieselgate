@@ -1,6 +1,6 @@
 var layers_styles = {
   reticolo_dati_0: function (feature, resolution) {
-    if (feature.get('PREM_DEATH') >= 0.0 && feature.get('PREM_DEATH') < 2.5 ) {
+    if (feature.get('PM_REAL') >= 0.000 && feature.get('PM_REAL') < 2.500 ) {
       return new ol.style.Style({
         fill: new ol.style.Fill({
           color: '#f7fbff'
@@ -10,7 +10,7 @@ var layers_styles = {
         })
       })
     }
-    if (feature.get('PREM_DEATH') >= 2.5 && feature.get('PREM_DEATH') < 5.0 ) {
+    if (feature.get('PM_REAL') >= 2.500 && feature.get('PM_REAL') < 5.000 ) {
       return new ol.style.Style({
         fill: new ol.style.Fill({
           color: '#d1e3f3'
@@ -20,37 +20,37 @@ var layers_styles = {
         })
       })
     }
-    if (feature.get('PREM_DEATH') >= 5.0 && feature.get('PREM_DEATH') < 8.0 ) {
+    if (feature.get('PM_REAL') >= 5.000 && feature.get('PM_REAL') < 8.000 ) {
       return new ol.style.Style({
         fill: new ol.style.Fill({
           color: '#9ac8e1'
         }),
         stroke: new ol.style.Stroke({
-          color: [105,200,105,1.0]
+          color: [105,105,105,1.0]
         })
       })
     }
-    if (feature.get('PREM_DEATH') >= 8.0 && feature.get('PREM_DEATH') < 10.0 ) {
+    if (feature.get('PM_REAL') >= 8.000 && feature.get('PM_REAL') < 10.000 ) {
       return new ol.style.Style({
         fill: new ol.style.Fill({
           color: '#529dcc'
         }),
         stroke: new ol.style.Stroke({
-          color: [105,255,105,1.0]
+          color: [105,105,105,1.0]
         })
       })
     }
-    if (feature.get('PREM_DEATH') >= 10.0 && feature.get('PREM_DEATH') < 20.0 ) {
+    if (feature.get('PM_REAL') >= 10.000 && feature.get('PM_REAL') < 20.000 ) {
       return new ol.style.Style({
         fill: new ol.style.Fill({
           color: '#1c6cb1'
         }),
         stroke: new ol.style.Stroke({
-          color: [0,105,255,1.0]
+          color: [105,105,105,1.0]
         })
       })
     }
-    if (feature.get('PREM_DEATH') >= 20.5 && feature.get('PREM_DEATH') <= 45.0 ) {
+    if (feature.get('PM_REAL') >= 20.500 && feature.get('PM_REAL') <= 45.000 ) {
       return new ol.style.Style({
         fill: new ol.style.Fill({
           color: '#08306b'
@@ -88,7 +88,7 @@ var layers_styles = {
           color: '#9ac8e1'
         }),
         stroke: new ol.style.Stroke({
-          color: [105,200,105,1.0]
+          color: [105,105,105,1.0]
         })
       })
     }
@@ -98,7 +98,7 @@ var layers_styles = {
           color: '#529dcc'
         }),
         stroke: new ol.style.Stroke({
-          color: [105,255,105,1.0]
+          color: [105,105,105,1.0]
         })
       })
     }
@@ -108,7 +108,7 @@ var layers_styles = {
           color: '#1c6cb1'
         }),
         stroke: new ol.style.Stroke({
-          color: [0,105,255,1.0]
+          color: [105,105,105,1.0]
         })
       })
     }
@@ -150,7 +150,7 @@ var layers_styles = {
           color: '#babbdb'
         }),
         stroke: new ol.style.Stroke({
-          color: [105,200,105,1.0]
+          color: [105,105,105,1.0]
         })
       })
     }
@@ -160,7 +160,7 @@ var layers_styles = {
           color: '#8c88c0'
         }),
         stroke: new ol.style.Stroke({
-          color: [105,255,105,1.0]
+          color: [105,105,105,1.0]
         })
       })
     }
@@ -170,7 +170,7 @@ var layers_styles = {
           color: '#63439c'
         }),
         stroke: new ol.style.Stroke({
-          color: [0,105,255,1.0]
+          color: [105,105,105,1.0]
         })
       })
     }
@@ -212,7 +212,7 @@ var layers_styles = {
           color: '#babbdb'
         }),
         stroke: new ol.style.Stroke({
-          color: [105,200,105,1.0]
+          color: [105,105,105,1.0]
         })
       })
     }
@@ -222,7 +222,7 @@ var layers_styles = {
           color: '#8c88c0'
         }),
         stroke: new ol.style.Stroke({
-          color: [105,255,105,1.0]
+          color: [105,105,105,1.0]
         })
       })
     }
@@ -232,7 +232,7 @@ var layers_styles = {
           color: '#63439c'
         }),
         stroke: new ol.style.Stroke({
-          color: [0,105,255,1.0]
+          color: [105,105,105,1.0]
         })
       })
     }
@@ -274,7 +274,7 @@ var layers_styles = {
           color: '#fda66d'
         }),
         stroke: new ol.style.Stroke({
-          color: [105,200,105,1.0]
+          color: [105,105,105,1.0]
         })
       })
     }
@@ -284,7 +284,7 @@ var layers_styles = {
           color: '#f2724a'
         }),
         stroke: new ol.style.Stroke({
-          color: [105,255,105,1.0]
+          color: [105,105,105,1.0]
         })
       })
     }
@@ -294,7 +294,7 @@ var layers_styles = {
           color: '#da3b28'
         }),
         stroke: new ol.style.Stroke({
-          color: [0,105,255,1.0]
+          color: [105,105,105,1.0]
         })
       })
     }
