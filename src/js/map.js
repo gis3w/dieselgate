@@ -41,6 +41,7 @@ map.on('click', function(evt) {
   var coordinate = evt.coordinate;
   var _feature = this.forEachFeatureAtPixel(pixel, function(feature, layer) {
     if (feature) {
+      $('.ol-popup').show();
       content.innerHTML = '<p>'+feature.get('Country')+'</p>';
       overlay.setPosition(coordinate);
     }
@@ -55,6 +56,10 @@ map.on('click', function(evt) {
     overlay.setPosition(undefined);
     closer.blur();
   }
+});
+
+map.on('postrender', function() {
+  $('#spinner-container').remove();
 });
 
 
