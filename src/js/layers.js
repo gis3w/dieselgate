@@ -23,7 +23,6 @@ var city2_layer = new ol.layer.Vector({
 });
 
 function change_reticolo_style(value) {
-  console.log(value)
   reticolo_layer.setStyle(layers_styles['reticolo_dati_'+value])
 }
 

@@ -22,12 +22,34 @@
     <div class="select">
       <span class="arr"></span>
       <select id="changestyle">
-        <option maptitle = "Extra PM 2.5 concentration from excess diesel NOx emissions - NB" value="0">Extra PM 2.5 from diesel NOx - NB</option>
+        <option value="0">Extra PM 2.5 from diesel NOx - NB</option>
         <option value="1">Extra PM 2.5 from diesel NOx</option>
         <option value="2">Premature deaths from diesel NOx - NB</option>
         <option value="3">Premature deaths from diesel NOx</option>
         <option value="4">Popolation</option>
       </select>
+    </div>
+    <div id="legend">
+      <div id="class0" class="legendclass">
+        <div id="textclass0"></div>
+        <div id="fillclass0" class="legendfill"></div>
+      </div>
+      <div id="class1" class="legendclass">
+        <div id="textclass1">Pippo</div>
+        <div id="fillclass1" class="legendfill"></div>
+      </div>
+      <div id="class2" class="legendclass">
+        <div id="textclass2">Pippo</div>
+        <div id="fillclass2" class="legendfill"></div>
+      </div>
+      <div id="class3" class="legendclass">
+        <div id="textclass3">Pippo</div>
+        <div id="fillclass3" class="legendfill"></div>
+      </div>
+      <div id="class4" class="legendclass">
+        <div id="textclass4">Pippo</div>
+        <div id="fillclass4" class="legendfill"></div>
+      </div>
     </div>
   </div>
   <div id="popup" class="ol-popup">
@@ -39,6 +61,7 @@
   <script src="./src/data/city2.js"></script>
   <script src="./src/data/reticolo_dati.js"></script>
   <script src="./src/data/stati.js"></script>
+  <script src="./src/js/legend.js"></script>
   <script src="./src/js/layers_styles.js"></script>
   <script src="./src/js/layers.js"></script>
   <script src="./src/js/map.js"></script>
@@ -54,7 +77,9 @@
       var value = $(this).find(":selected").val();
       change_reticolo_style(value);
       $('#maptitle').text(mapTitles[value]);
-    })
+      createLegend(value);
+    });
+    createLegend(0);
   </script>
 </body>
 </html>
