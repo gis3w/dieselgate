@@ -18,10 +18,17 @@
     </div>
   </div>
   <div id="map">
-    <select id="changestyle">
-      <option value="0">da 0 a 5 morti</option>
-      <option value="1">da 6 a 10 morti</option>
-    </select>
+    <div id ="maptitle">Extra PM 2.5 concentration from excess diesel NOx emissions - NB</div>
+    <div class="select">
+      <span class="arr"></span>
+      <select id="changestyle">
+        <option maptitle = "Extra PM 2.5 concentration from excess diesel NOx emissions - NB" value="0">Extra PM 2.5 from diesel NOx - NB</option>
+        <option value="1">Extra PM 2.5 from diesel NOx</option>
+        <option value="2">Premature deaths from diesel NOx - NB</option>
+        <option value="3">Premature deaths from diesel NOx</option>
+        <option value="4">Popolation</option>
+      </select>
+    </div>
   </div>
   <div id="popup" class="ol-popup">
     <a href="#" id="popup-closer" class="ol-popup-closer"></a>
@@ -36,8 +43,17 @@
   <script src="./src/js/layers.js"></script>
   <script src="./src/js/map.js"></script>
   <script>
+    var mapTitles = [
+      "Extra PM 2.5 concentration from excess diesel NOx emissions - NB",
+      "Extra PM 2.5 concentration from excess diesel NOx emissions",
+      "Approximate premature deaths dues to excess diesel Nox emissions - NB",
+      "Approximate premature deaths dues to excess diesel Nox emissions",
+      "Popolation"
+    ];
     $('#changestyle').change(function() {
-      change_reticolo_style($(this).find(":selected").val())
+      var value = $(this).find(":selected").val();
+      change_reticolo_style(value);
+      $('#maptitle').text(mapTitles[value]);
     })
   </script>
 </body>

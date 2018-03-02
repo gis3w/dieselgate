@@ -4,31 +4,93 @@ html, body, #map {
     width: 100%;
 }
 
-
-#changestyle {
+#maptitle {
+    position: relative;
+    display: inline-block;
     position: absolute;
-    background: #ffffff;
+    top: 10px;
+    left: 50px;
+    z-index: 1000;
+    font-weight: bold;
+    color: #529dcc;
+    padding: 5px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    border: 1px solid #529dcc;
+}
+
+.select {
+    font-size: 16px;
+    position: relative;
+    display: inline-block;
+    position: absolute;
     top: 10px;
     right: 10px;
     z-index: 1000;
-    color: #003c88;
-    border: 0;
-    font-size: 20px;
-    padding: 2px 10px;
+}
+
+.select select {
+    outline: none;
+    -webkit-appearance: none;
+    display: block;
+    padding: 1.2em 3em 1.3em 1.5em;
+    margin: 0;
+    transition: border-color 0.2s;
+    border: 5px solid #529dcc;
+    border-radius: 5px;
+    background: #fff;
+    color: #529dcc;
+    line-height: normal;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.select .arr {
+    background: #fff;
+    bottom: 5px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    pointer-events: none;
+}
+.select .arr:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 24px;
+    margin-top: -5px;
+    pointer-events: none;
+    border-top: 10px solid #529dcc;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+}
+
+.select .arr:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 28px;
+    margin-top: -5px;
+    pointer-events: none;
+    border-top: 6px solid #fff;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
 }
 
 .ol-popup {
     position: absolute;
     display: none;
     color: #ffffff;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(82, 157, 204, 0.9);
     -webkit-filter: drop-shadow(0 1px 4px rgba(0,0,0,0.2));
     filter: drop-shadow(0 1px 4px rgba(0,0,0,0.2));
     padding: 15px;
     border-radius: 10px;
     bottom: 12px;
     left: -50px;
-    width: 150px;
+    min-width: 300px;
+    font-family: "Source Sans Pro", sans-serif;
 }
 .ol-popup:after, .ol-popup:before {
     top: 100%;
@@ -40,7 +102,7 @@ html, body, #map {
     pointer-events: none;
 }
 .ol-popup:after {
-    border-top-color: rgba(0,0,0,0.5);
+    border-top-color: rgba(82, 157, 204, 0.9);
     border-width: 10px;
     left: 48px;
     margin-left: -10px;
@@ -119,6 +181,9 @@ html, body, #map {
            transform: scaleY(1.0);
            -webkit-transform: scaleY(1.0);
        }
+}
+.ol-attribution {
+    displaye: none
 }
 
 

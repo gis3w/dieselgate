@@ -1,121 +1,307 @@
 var layers_styles = {
   reticolo_dati_0: function (feature, resolution) {
-    if(feature.get('Death incr') >= 0.000000 && feature.get('Death incr') <= 0.020000) {
+    if (feature.get('PREM_DEATH') >= 0.0 && feature.get('PREM_DEATH') < 2.5 ) {
       return new ol.style.Style({
         fill: new ol.style.Fill({
-          color: [247, 251, 255, 1.0]
-        }),
-        stroke: new ol.style.Stroke({
-          color: [105, 105, 105, 1.0]
-        })
-      })
-    }
-    if(feature.get('Death incr') >= 0.020000 && feature.get('Death incr') <= 0.060000) {
-      return new ol.style.Style({
-        fill: new ol.style.Fill({
-          color: [209, 227, 243, 1.0]
-        }),
-        stroke: new ol.style.Stroke({
-          color: [105, 105, 105, 1.0]
-        })
-      })
-    }
-    if(feature.get('Death incr') >= 0.060000 && feature.get('Death incr') <= 0.120000) {
-      return new ol.style.Style({
-        fill: new ol.style.Fill({
-          color: [154, 200, 225, 1.0]
-        }),
-        stroke: new ol.style.Stroke({
-          color: [105, 105, 105, 1.0]
-        })
-      })
-    }
-    if(feature.get('Death incr') >= 0.120000 && feature.get('Death incr') <= 0.220000) {
-      return new ol.style.Style({
-        fill: new ol.style.Fill({
-          color: [82, 157, 204, 1.0]
-        }),
-        stroke: new ol.style.Stroke({
-          color: [105, 105, 105, 1.0]
-        })
-      })
-    }
-    if(feature.get('Death incr') >= 0.220000 && feature.get('Death incr') <= 0.420000) {
-      return new ol.style.Style({
-        fill: new ol.style.Fill({
-          color: [28, 108, 177, 1.0]
-        }),
-        stroke: new ol.style.Stroke({
-          color: [105, 105, 105, 1.0]
-        })
-      })
-    }
-    if(feature.get('Death incr') >= 0.420000 && feature.get('Death incr') <= 0.640000) {
-      return new ol.style.Style({
-        fill: new ol.style.Fill({
-          color: [8, 48, 107, 1.0]
-        }),
-        stroke: new ol.style.Stroke({
-          color: [105, 105, 105, 1.0]
-        })
-      })
-    }
-  },
-  reticolo_dati_1: function (feature, resolution) {
-    if (feature.get('Death incr') >= 0.000000 && feature.get('Death incr') <= 0.020000 ) {
-      return new ol.style.Style({
-        fill: new ol.style.Fill({
-          color: [0,251,255,1.0]
+          color: '#f7fbff'
         }),
         stroke: new ol.style.Stroke({
           color: [105,105,105,1.0]
         })
       })
     }
-    if (feature.get('Death incr') >= 0.020000 && feature.get('Death incr') <= 0.060000 ) {
+    if (feature.get('PREM_DEATH') >= 2.5 && feature.get('PREM_DEATH') < 5.0 ) {
       return new ol.style.Style({
         fill: new ol.style.Fill({
-          color: [209,0,243, 1.0]
+          color: '#d1e3f3'
         }),
         stroke: new ol.style.Stroke({
           color: [105,105,105,1.0]
         })
       })
     }
-    if (feature.get('Death incr') >= 0.060000 && feature.get('Death incr') <= 0.120000 ) {
+    if (feature.get('PREM_DEATH') >= 5.0 && feature.get('PREM_DEATH') < 8.0 ) {
       return new ol.style.Style({
         fill: new ol.style.Fill({
-          color: [154,200,0,1.0]
+          color: '#9ac8e1'
         }),
         stroke: new ol.style.Stroke({
           color: [105,200,105,1.0]
         })
       })
     }
-    if (feature.get('Death incr') >= 0.120000 && feature.get('Death incr') <= 0.220000 ) {
+    if (feature.get('PREM_DEATH') >= 8.0 && feature.get('PREM_DEATH') < 10.0 ) {
       return new ol.style.Style({
         fill: new ol.style.Fill({
-          color: [82,157,204,1.0]
+          color: '#529dcc'
         }),
         stroke: new ol.style.Stroke({
           color: [105,255,105,1.0]
         })
       })
     }
-    if (feature.get('Death incr') >= 0.220000 && feature.get('Death incr') <= 0.420000 ) {
+    if (feature.get('PREM_DEATH') >= 10.0 && feature.get('PREM_DEATH') < 20.0 ) {
       return new ol.style.Style({
         fill: new ol.style.Fill({
-          color: [28,108,177,1.0]
+          color: '#1c6cb1'
         }),
         stroke: new ol.style.Stroke({
           color: [0,105,255,1.0]
         })
       })
     }
-    if (feature.get('Death incr') >= 0.420000 && feature.get('Death incr') <= 0.640000 ) {
+    if (feature.get('PREM_DEATH') >= 20.5 && feature.get('PREM_DEATH') <= 45.0 ) {
       return new ol.style.Style({
         fill: new ol.style.Fill({
-          color: [8,48,107,1.0]
+          color: '#08306b'
+        }),
+        stroke: new ol.style.Stroke({
+          color: [105,105,105,1.0]
+        })
+      })
+    }
+  },
+  reticolo_dati_1: function (feature, resolution) {
+    if (feature.get('PREM_DEATH') >= 0.0 && feature.get('PREM_DEATH') < 7.5 ) {
+      return new ol.style.Style({
+        fill: new ol.style.Fill({
+          color: '#f7fbff'
+        }),
+        stroke: new ol.style.Stroke({
+          color: [105,105,105,1.0]
+        })
+      })
+    }
+    if (feature.get('PREM_DEATH') >= 7.5 && feature.get('PREM_DEATH') < 15.0 ) {
+      return new ol.style.Style({
+        fill: new ol.style.Fill({
+          color: '#d1e3f3'
+        }),
+        stroke: new ol.style.Stroke({
+          color: [105,105,105,1.0]
+        })
+      })
+    }
+    if (feature.get('PREM_DEATH') >= 15.0 && feature.get('PREM_DEATH') < 22.5 ) {
+      return new ol.style.Style({
+        fill: new ol.style.Fill({
+          color: '#9ac8e1'
+        }),
+        stroke: new ol.style.Stroke({
+          color: [105,200,105,1.0]
+        })
+      })
+    }
+    if (feature.get('PREM_DEATH') >= 22.5 && feature.get('PREM_DEATH') < 30.0 ) {
+      return new ol.style.Style({
+        fill: new ol.style.Fill({
+          color: '#529dcc'
+        }),
+        stroke: new ol.style.Stroke({
+          color: [105,255,105,1.0]
+        })
+      })
+    }
+    if (feature.get('PREM_DEATH') >= 30.0 && feature.get('PREM_DEATH') < 37.5 ) {
+      return new ol.style.Style({
+        fill: new ol.style.Fill({
+          color: '#1c6cb1'
+        }),
+        stroke: new ol.style.Stroke({
+          color: [0,105,255,1.0]
+        })
+      })
+    }
+    if (feature.get('PREM_DEATH') >= 37.5 && feature.get('PREM_DEATH') <= 45.0 ) {
+      return new ol.style.Style({
+        fill: new ol.style.Fill({
+          color: '#08306b'
+        }),
+        stroke: new ol.style.Stroke({
+          color: [105,105,105,1.0]
+        })
+      })
+    }
+  },
+  reticolo_dati_2: function (feature, resolution) {
+    if (feature.get('PREM_DEATH') >= 0.0 && feature.get('PREM_DEATH') < 1.0 ) {
+      return new ol.style.Style({
+        fill: new ol.style.Fill({
+          color: '#fcfbfd'
+        }),
+        stroke: new ol.style.Stroke({
+          color: [105,105,105,1.0]
+        })
+      })
+    }
+    if (feature.get('PREM_DEATH') >= 1.0 && feature.get('PREM_DEATH') < 3.0 ) {
+      return new ol.style.Style({
+        fill: new ol.style.Fill({
+          color: '#e4e3f0'
+        }),
+        stroke: new ol.style.Stroke({
+          color: [105,105,105,1.0]
+        })
+      })
+    }
+    if (feature.get('PREM_DEATH') >= 3.0 && feature.get('PREM_DEATH') < 7.0 ) {
+      return new ol.style.Style({
+        fill: new ol.style.Fill({
+          color: '#babbdb'
+        }),
+        stroke: new ol.style.Stroke({
+          color: [105,200,105,1.0]
+        })
+      })
+    }
+    if (feature.get('PREM_DEATH') >= 7.0 && feature.get('PREM_DEATH') < 12.0 ) {
+      return new ol.style.Style({
+        fill: new ol.style.Fill({
+          color: '#8c88c0'
+        }),
+        stroke: new ol.style.Stroke({
+          color: [105,255,105,1.0]
+        })
+      })
+    }
+    if (feature.get('PREM_DEATH') >= 12.0 && feature.get('PREM_DEATH') < 50.0 ) {
+      return new ol.style.Style({
+        fill: new ol.style.Fill({
+          color: '#63439c'
+        }),
+        stroke: new ol.style.Stroke({
+          color: [0,105,255,1.0]
+        })
+      })
+    }
+    if (feature.get('PREM_DEATH') >= 50.0 && feature.get('PREM_DEATH') <= 120.0 ) {
+      return new ol.style.Style({
+        fill: new ol.style.Fill({
+          color: '#3f007d'
+        }),
+        stroke: new ol.style.Stroke({
+          color: [105,105,105,1.0]
+        })
+      })
+    }
+  },
+  reticolo_dati_3: function (feature, resolution) {
+    if (feature.get('PREM_DEATH') >= 0.000000 && feature.get('PREM_DEATH') < 20.00000 ) {
+      return new ol.style.Style({
+        fill: new ol.style.Fill({
+          color: '#fcfbfd'
+        }),
+        stroke: new ol.style.Stroke({
+          color: [105,105,105,1.0]
+        })
+      })
+    }
+    if (feature.get('PREM_DEATH') >= 20.0 && feature.get('PREM_DEATH') < 40.0 ) {
+      return new ol.style.Style({
+        fill: new ol.style.Fill({
+          color: '#e4e3f0'
+        }),
+        stroke: new ol.style.Stroke({
+          color: [105,105,105,1.0]
+        })
+      })
+    }
+    if (feature.get('PREM_DEATH') >= 40.0 && feature.get('PREM_DEATH') < 60.0 ) {
+      return new ol.style.Style({
+        fill: new ol.style.Fill({
+          color: '#babbdb'
+        }),
+        stroke: new ol.style.Stroke({
+          color: [105,200,105,1.0]
+        })
+      })
+    }
+    if (feature.get('PREM_DEATH') >= 60.0 && feature.get('PREM_DEATH') < 80.0 ) {
+      return new ol.style.Style({
+        fill: new ol.style.Fill({
+          color: '#8c88c0'
+        }),
+        stroke: new ol.style.Stroke({
+          color: [105,255,105,1.0]
+        })
+      })
+    }
+    if (feature.get('PREM_DEATH') >= 80.0 && feature.get('PREM_DEATH') < 100.0 ) {
+      return new ol.style.Style({
+        fill: new ol.style.Fill({
+          color: '#63439c'
+        }),
+        stroke: new ol.style.Stroke({
+          color: [0,105,255,1.0]
+        })
+      })
+    }
+    if (feature.get('PREM_DEATH') >= 100.0 && feature.get('PREM_DEATH') <= 120.0 ) {
+      return new ol.style.Style({
+        fill: new ol.style.Fill({
+          color: '#3f007d'
+        }),
+        stroke: new ol.style.Stroke({
+          color: [105,105,105,1.0]
+        })
+      })
+    }
+  },
+  reticolo_dati_4: function (feature, resolution) {
+    if (feature.get('pop') >= 1.0 && feature.get('pop') < 50000.0 ) {
+      return new ol.style.Style({
+        fill: new ol.style.Fill({
+          color: '#fef0d9'
+        }),
+        stroke: new ol.style.Stroke({
+          color: [105,105,105,1.0]
+        })
+      })
+    }
+    if (feature.get('pop') >= 50000.0 && feature.get('pop') < 200000.0 ) {
+      return new ol.style.Style({
+        fill: new ol.style.Fill({
+          color: '#fed49a'
+        }),
+        stroke: new ol.style.Stroke({
+          color: [105,105,105,1.0]
+        })
+      })
+    }
+    if (feature.get('pop') >= 200000.0 && feature.get('pop') < 500000.0 ) {
+      return new ol.style.Style({
+        fill: new ol.style.Fill({
+          color: '#fda66d'
+        }),
+        stroke: new ol.style.Stroke({
+          color: [105,200,105,1.0]
+        })
+      })
+    }
+    if (feature.get('pop') >= 500000.0 && feature.get('pop') < 1000000.0 ) {
+      return new ol.style.Style({
+        fill: new ol.style.Fill({
+          color: '#f2724a'
+        }),
+        stroke: new ol.style.Stroke({
+          color: [105,255,105,1.0]
+        })
+      })
+    }
+    if (feature.get('pop') >= 1000000.0 && feature.get('pop') < 2500000.0 ) {
+      return new ol.style.Style({
+        fill: new ol.style.Fill({
+          color: '#da3b28'
+        }),
+        stroke: new ol.style.Stroke({
+          color: [0,105,255,1.0]
+        })
+      })
+    }
+    if (feature.get('pop') >= 2500000.0 && feature.get('pop') <= 10000000.0 ) {
+      return new ol.style.Style({
+        fill: new ol.style.Fill({
+          color: '#b30000'
         }),
         stroke: new ol.style.Stroke({
           color: [105,105,105,1.0]
@@ -161,7 +347,7 @@ var layers_styles = {
         })
       ]
     }
-    if (resolution < 2000) {
+    if (resolution < 0.02) {
       if (feature.get('featurecla')  != 'Admin-0 capital') {
         return new ol.style.Style({
           text: new ol.style.Text({

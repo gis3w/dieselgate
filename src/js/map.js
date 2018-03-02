@@ -1,7 +1,8 @@
 var view = new ol.View({
-  zoom: 5,
-  projection: "",
-  center: ol.proj.transform([11,43], "EPSG:4326", "EPSG:3857")
+  zoom: 6,
+  projection: "urn:ogc:def:crs:OGC:1.3:CRS84",
+  center: [11,43],
+  minZoom: 5
 });
 
 
@@ -39,10 +40,16 @@ var map = new ol.Map({
 map.on('click', function(evt) {
   var pixel = evt.pixel;
   var coordinate = evt.coordinate;
+  var innerHTML = '';
   var _feature = this.forEachFeatureAtPixel(pixel, function(feature, layer) {
     if (feature) {
       $('.ol-popup').show();
-      content.innerHTML = '<p>'+feature.get('Country')+'</p>';
+      innerHTML = innerHTML +  '<div><span>Country: '+feature.get('Country')+'</span></div>';
+      innerHTML = innerHTML +  '<div><span>Population: '+feature.get('pop')+'</span></div>';
+      innerHTML = innerHTML +  '<div><span>PM 2.5 from all sources: '+feature.get('PM_REAL')+'</span></div>';
+      innerHTML = innerHTML +  '<div><span>Extra PM 2.5 from excess diesel NOx emissions: '+feature.get('PM_DIESEL')+'</span></div>';
+      innerHTML = innerHTML +  '<div><span>Approximate premature deaths dues to excess diesel NOx emissions: '+feature.get('PREM_DEATH')+'</span></div>';
+      content.innerHTML = innerHTML;
       overlay.setPosition(coordinate);
     }
     return feature
