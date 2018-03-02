@@ -1,13 +1,9 @@
 var view = new ol.View({
   zoom: 5,
+  projection: "",
   center: ol.proj.transform([11,43], "EPSG:4326", "EPSG:3857")
 });
 
-var OSMLayer = new ol.layer.Tile({
-  source: new ol.source.OSM({
-    attribution: 'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
-  })
-});
 
 var container = document.getElementById('popup');
 var content = document.getElementById('popup-content');
@@ -28,21 +24,22 @@ var overlay = new ol.Overlay({
   }
 });
 
+
 var map = new ol.Map({
   target: "map",
   view: view,
   overlays: [overlay],
-  layers: [OSMLayer, reticolo_layer, stati_layer, city2_layer]
+  layers: [reticolo_layer, stati_layer, city2_layer]
 });
 
 
 /**
  * Add a click handler to the map to render the popup.
  */
-map.on('singleclick', function(evt) {
+map.on('click', function(evt) {
   var pixel = evt.pixel;
   var coordinate = evt.coordinate;
-  this.forEachFeatureAtPixel(pixel, function(feature, layer) {
+  var _feature = this.forEachFeatureAtPixel(pixel, function(feature, layer) {
     if (feature) {
       content.innerHTML = '<p>'+feature.get('Country')+'</p>';
       overlay.setPosition(coordinate);
@@ -52,8 +49,12 @@ map.on('singleclick', function(evt) {
     layerFilter: function(layer) {
      return layer == reticolo_layer
     },
-    hitTolerance: 10
+    hitTolerance: 0
   });
+  if (!_feature) {
+    overlay.setPosition(undefined);
+    closer.blur();
+  }
 });
 
 
