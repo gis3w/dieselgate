@@ -1,54 +1,46 @@
+var reticolo_dati_labels_colors = [
+  {
+    labels: ['7.42 - 12.00', '12.00 - 50.00', '50.00 - 120.00'],
+    fill:['rgba( 244, 77, 55, 0.40 )', 'rgba( 197, 22, 27, 0.40 )', 'rgba( 103, 0, 13, 0.40 )']
+  },
+  {
+    labels: ['0.00 - 1.00', '1.00 - 3.00', '3.00 - 7.00', '7.00 - 12.00','12.00 - 50.00','50.00 - 120.00'],
+    fill:['rgba( 255, 245, 240, 0.40 )', 'rgba( 253, 204, 184, 0.40 )', 'rgba( 252, 143, 111, 0.40 )', 'rgba( 244, 77, 55, 0.40 )', 'rgba( 197, 22, 27, 0.40 )', 'rgba( 103, 0, 13, 0.40 )']
+  },
+  {
+    labels: ['0.000 - 0.050', '0.050 - 0.100', '0.100 - 0.200', '0.200 - 0.500','0.500 - 1.030'],
+    fill:['rgba( 247, 251, 255, 1.00 )', 'rgba( 200, 221, 240, 0.40 )', 'rgba( 115, 179, 216, 0.40 )', 'rgba( 40, 121, 185, 0.40 )', 'rgba( 8, 48, 107, 0.40 )']
+  },
+  {
+    labels: ['1 - 50000', '50000 - 200000', '200000 - 500000', '500000 - 1000000','1000000 - 2500000','2500000 - 10000000'],
+    fill:['rgba( 237, 248, 251, 0.40 )', 'rgba( 190, 231, 231, 0.40 )', 'rgba( 132, 207, 189, 0.40 )', 'rgba( 79, 181, 136, 0.40 )', 'rgba( 35, 151, 85, 0.40 )', 'rgba( 0, 109, 44, 0.40 )']
+  }
+];
+
 var layers_styles = {
   reticolo_dati_0: function (feature, resolution) {
-    if (feature.get('PM_REAL') >= 0.000 && feature.get('PM_REAL') < 2.500 ) {
+    if (feature.get('PREM_DEATH') >= 7.4200 && feature.get('PREM_DEATH') < 12.00 ) {
       return new ol.style.Style({
         fill: new ol.style.Fill({
-          color: '#f7fbff'
+          color: reticolo_dati_labels_colors[0].fill[0]
         }),
         stroke: new ol.style.Stroke({
           color: [105,105,105,1.0]
         })
       })
-    } else if (feature.get('PM_REAL') >= 2.500 && feature.get('PM_REAL') < 5.000 ) {
+    } else if (feature.get('PREM_DEATH') >= 12.00 && feature.get('PREM_DEATH') < 50.000 ) {
       return new ol.style.Style({
         fill: new ol.style.Fill({
-          color: '#d1e3f3'
+          color: reticolo_dati_labels_colors[0].fill[1]
         }),
         stroke: new ol.style.Stroke({
           color: [105,105,105,1.0]
         })
       })
-    } else if (feature.get('PM_REAL') >= 5.000 && feature.get('PM_REAL') < 8.000 ) {
+    } else if (feature.get('PREM_DEATH') >= 50.000 && feature.get('PREM_DEATH') <= 120.000 ) {
       return new ol.style.Style({
         fill: new ol.style.Fill({
-          color: '#9ac8e1'
-        }),
-        stroke: new ol.style.Stroke({
-          color: [105,105,105,1.0]
-        })
-      })
-    } else if (feature.get('PM_REAL') >= 8.000 && feature.get('PM_REAL') < 10.000 ) {
-      return new ol.style.Style({
-        fill: new ol.style.Fill({
-          color: '#529dcc'
-        }),
-        stroke: new ol.style.Stroke({
-          color: [105,105,105,1.0]
-        })
-      })
-    } else if (feature.get('PM_REAL') >= 10.000 && feature.get('PM_REAL') < 20.000 ) {
-      return new ol.style.Style({
-        fill: new ol.style.Fill({
-          color: '#1c6cb1'
-        }),
-        stroke: new ol.style.Stroke({
-          color: [105,105,105,1.0]
-        })
-      })
-    } else if (feature.get('PM_REAL') >= 20.000 && feature.get('PM_REAL') <= 45.000 ) {
-      return new ol.style.Style({
-        fill: new ol.style.Fill({
-          color: '#08306b'
+          color: reticolo_dati_labels_colors[0].fill[2]
         }),
         stroke: new ol.style.Stroke({
           color: [105,105,105,1.0]
@@ -57,67 +49,10 @@ var layers_styles = {
     }
   },
   reticolo_dati_1: function (feature, resolution) {
-    if (feature.get('PM_REAL') >= 0.0 && feature.get('PM_REAL') < 7.5 ) {
-      return new ol.style.Style({
-        fill: new ol.style.Fill({
-          color: '#f7fbff'
-        }),
-        stroke: new ol.style.Stroke({
-          color: [105,105,105,1.0]
-        })
-      })
-    } else if (feature.get('PM_REAL') >= 7.5 && feature.get('PM_REAL') < 15.0 ) {
-      return new ol.style.Style({
-        fill: new ol.style.Fill({
-          color: '#d1e3f3'
-        }),
-        stroke: new ol.style.Stroke({
-          color: [105,105,105,1.0]
-        })
-      })
-    } else if (feature.get('PM_REAL') >= 15.0 && feature.get('PM_REAL') < 22.5 ) {
-      return new ol.style.Style({
-        fill: new ol.style.Fill({
-          color: '#9ac8e1'
-        }),
-        stroke: new ol.style.Stroke({
-          color: [105,105,105,1.0]
-        })
-      })
-    } else if (feature.get('PM_REAL') >= 22.5 && feature.get('PM_REAL') < 30.0 ) {
-      return new ol.style.Style({
-        fill: new ol.style.Fill({
-          color: '#529dcc'
-        }),
-        stroke: new ol.style.Stroke({
-          color: [105,105,105,1.0]
-        })
-      })
-    } else if (feature.get('PM_REAL') >= 30.0 && feature.get('PM_REAL') < 37.5 ) {
-      return new ol.style.Style({
-        fill: new ol.style.Fill({
-          color: '#1c6cb1'
-        }),
-        stroke: new ol.style.Stroke({
-          color: [105,105,105,1.0]
-        })
-      })
-    } else if (feature.get('PM_REAL') >= 37.5 && feature.get('PM_REAL') <= 45.0 ) {
-      return new ol.style.Style({
-        fill: new ol.style.Fill({
-          color: '#08306b'
-        }),
-        stroke: new ol.style.Stroke({
-          color: [105,105,105,1.0]
-        })
-      })
-    }
-  },
-  reticolo_dati_2: function (feature, resolution) {
     if (feature.get('PREM_DEATH') >= 0.0 && feature.get('PREM_DEATH') < 1.0 ) {
       return new ol.style.Style({
         fill: new ol.style.Fill({
-          color: '#fcfbfd'
+          color: reticolo_dati_labels_colors[1].fill[0]
         }),
         stroke: new ol.style.Stroke({
           color: [105,105,105,1.0]
@@ -126,7 +61,7 @@ var layers_styles = {
     } else if (feature.get('PREM_DEATH') >= 1.0 && feature.get('PREM_DEATH') < 3.0 ) {
       return new ol.style.Style({
         fill: new ol.style.Fill({
-          color: '#e4e3f0'
+          color: reticolo_dati_labels_colors[1].fill[1]
         }),
         stroke: new ol.style.Stroke({
           color: [105,105,105,1.0]
@@ -135,7 +70,7 @@ var layers_styles = {
     } else if (feature.get('PREM_DEATH') >= 3.0 && feature.get('PREM_DEATH') < 7.0 ) {
       return new ol.style.Style({
         fill: new ol.style.Fill({
-          color: '#babbdb'
+          color: reticolo_dati_labels_colors[1].fill[2]
         }),
         stroke: new ol.style.Stroke({
           color: [105,105,105,1.0]
@@ -144,7 +79,7 @@ var layers_styles = {
     } else if (feature.get('PREM_DEATH') >= 7.0 && feature.get('PREM_DEATH') < 12.0 ) {
       return new ol.style.Style({
         fill: new ol.style.Fill({
-          color: '#8c88c0'
+          color: reticolo_dati_labels_colors[1].fill[3]
         }),
         stroke: new ol.style.Stroke({
           color: [105,105,105,1.0]
@@ -153,7 +88,7 @@ var layers_styles = {
     } else if (feature.get('PREM_DEATH') >= 12.0 && feature.get('PREM_DEATH') < 50.0 ) {
       return new ol.style.Style({
         fill: new ol.style.Fill({
-          color: '#63439c'
+          color: reticolo_dati_labels_colors[1].fill[4]
         }),
         stroke: new ol.style.Stroke({
           color: [105,105,105,1.0]
@@ -162,7 +97,55 @@ var layers_styles = {
     } else if (feature.get('PREM_DEATH') >= 50.0 && feature.get('PREM_DEATH') <= 120.0 ) {
       return new ol.style.Style({
         fill: new ol.style.Fill({
-          color: '#3f007d'
+          color: reticolo_dati_labels_colors[1].fill[5]
+        }),
+        stroke: new ol.style.Stroke({
+          color: [105,105,105,1.0]
+        })
+      })
+    }
+  },
+  reticolo_dati_2: function (feature, resolution) {
+    if (feature.get('PM_DIESEL') >= 0.000 && feature.get('PM_DIESEL') < 0.050 ) {
+      return new ol.style.Style({
+        fill: new ol.style.Fill({
+          color: reticolo_dati_labels_colors[2].fill[0]
+        }),
+        stroke: new ol.style.Stroke({
+          color: [105,105,105,1.0]
+        })
+      })
+    } else if (feature.get('PM_DIESEL') >= 0.050 && feature.get('PM_DIESEL') < 0.100 ) {
+      return new ol.style.Style({
+        fill: new ol.style.Fill({
+          color: reticolo_dati_labels_colors[2].fill[1]
+        }),
+        stroke: new ol.style.Stroke({
+          color: [105,105,105,1.0]
+        })
+      })
+    } else if (feature.get('PM_DIESEL') >= 0.100 && feature.get('PM_DIESEL') < 0.200 ) {
+      return new ol.style.Style({
+        fill: new ol.style.Fill({
+          color: reticolo_dati_labels_colors[2].fill[2]
+        }),
+        stroke: new ol.style.Stroke({
+          color: [105,105,105,1.0]
+        })
+      })
+    } else if (feature.get('PM_DIESEL') >= 0.200 && feature.get('PM_DIESEL') < 0.500) {
+      return new ol.style.Style({
+        fill: new ol.style.Fill({
+          color: reticolo_dati_labels_colors[2].fill[3]
+        }),
+        stroke: new ol.style.Stroke({
+          color: [105,105,105,1.0]
+        })
+      })
+    } else if (feature.get('PM_DIESEL') >= 0.500 && feature.get('PM_DIESEL') <= 1.030 ) {
+      return new ol.style.Style({
+        fill: new ol.style.Fill({
+          color: reticolo_dati_labels_colors[2].fill[4]
         }),
         stroke: new ol.style.Stroke({
           color: [105,105,105,1.0]
@@ -171,72 +154,10 @@ var layers_styles = {
     }
   },
   reticolo_dati_3: function (feature, resolution) {
-    if (feature.get('PREM_DEATH') >= 0.000000 && feature.get('PREM_DEATH') < 20.00000 ) {
-      return new ol.style.Style({
-        fill: new ol.style.Fill({
-          color: '#fcfbfd'
-        }),
-        stroke: new ol.style.Stroke({
-          color: [105,105,105,1.0]
-        })
-      })
-    }
-    if (feature.get('PREM_DEATH') >= 20.0 && feature.get('PREM_DEATH') < 40.0 ) {
-      return new ol.style.Style({
-        fill: new ol.style.Fill({
-          color: '#e4e3f0'
-        }),
-        stroke: new ol.style.Stroke({
-          color: [105,105,105,1.0]
-        })
-      })
-    }
-    if (feature.get('PREM_DEATH') >= 40.0 && feature.get('PREM_DEATH') < 60.0 ) {
-      return new ol.style.Style({
-        fill: new ol.style.Fill({
-          color: '#babbdb'
-        }),
-        stroke: new ol.style.Stroke({
-          color: [105,105,105,1.0]
-        })
-      })
-    }
-    if (feature.get('PREM_DEATH') >= 60.0 && feature.get('PREM_DEATH') < 80.0 ) {
-      return new ol.style.Style({
-        fill: new ol.style.Fill({
-          color: '#8c88c0'
-        }),
-        stroke: new ol.style.Stroke({
-          color: [105,105,105,1.0]
-        })
-      })
-    }
-    if (feature.get('PREM_DEATH') >= 80.0 && feature.get('PREM_DEATH') < 100.0 ) {
-      return new ol.style.Style({
-        fill: new ol.style.Fill({
-          color: '#63439c'
-        }),
-        stroke: new ol.style.Stroke({
-          color: [105,105,105,1.0]
-        })
-      })
-    }
-    if (feature.get('PREM_DEATH') >= 100.0 && feature.get('PREM_DEATH') <= 120.0 ) {
-      return new ol.style.Style({
-        fill: new ol.style.Fill({
-          color: '#3f007d'
-        }),
-        stroke: new ol.style.Stroke({
-          color: [105,105,105,1.0]
-        })
-      })
-    }
-  },
-  reticolo_dati_4: function (feature, resolution) {
     if (feature.get('pop') >= 1.0 && feature.get('pop') < 50000.0 ) {
       return new ol.style.Style({
         fill: new ol.style.Fill({
-          color: '#fef0d9'
+          color: reticolo_dati_labels_colors[3].fill[0]
         }),
         stroke: new ol.style.Stroke({
           color: [105,105,105,1.0]
@@ -246,7 +167,7 @@ var layers_styles = {
     if (feature.get('pop') >= 50000.0 && feature.get('pop') < 200000.0 ) {
       return new ol.style.Style({
         fill: new ol.style.Fill({
-          color: '#fed49a'
+          color: reticolo_dati_labels_colors[3].fill[1]
         }),
         stroke: new ol.style.Stroke({
           color: [105,105,105,1.0]
@@ -256,7 +177,7 @@ var layers_styles = {
     if (feature.get('pop') >= 200000.0 && feature.get('pop') < 500000.0 ) {
       return new ol.style.Style({
         fill: new ol.style.Fill({
-          color: '#fda66d'
+          color: reticolo_dati_labels_colors[3].fill[2]
         }),
         stroke: new ol.style.Stroke({
           color: [105,105,105,1.0]
@@ -266,7 +187,7 @@ var layers_styles = {
     if (feature.get('pop') >= 500000.0 && feature.get('pop') < 1000000.0 ) {
       return new ol.style.Style({
         fill: new ol.style.Fill({
-          color: '#f2724a'
+          color: reticolo_dati_labels_colors[3].fill[3]
         }),
         stroke: new ol.style.Stroke({
           color: [105,105,105,1.0]
@@ -276,7 +197,7 @@ var layers_styles = {
     if (feature.get('pop') >= 1000000.0 && feature.get('pop') < 2500000.0 ) {
       return new ol.style.Style({
         fill: new ol.style.Fill({
-          color: '#f2724a'
+          color: reticolo_dati_labels_colors[3].fill[4]
         }),
         stroke: new ol.style.Stroke({
           color: [105,105,105,1.0]
@@ -286,75 +207,12 @@ var layers_styles = {
     if (feature.get('pop') >= 2500000.0 && feature.get('pop') <= 10000000.0 ) {
       return new ol.style.Style({
         fill: new ol.style.Fill({
-          color: '#b30000'
+          color: reticolo_dati_labels_colors[3].fill[5]
         }),
         stroke: new ol.style.Stroke({
           color: [105,105,105,1.0]
         })
       })
-    }
-  },
-  city2: function(feature, resolution) {
-    if (feature.get('featurecla')  == 'Admin-0 capital') {
-      return [new ol.style.Style({
-        image: new ol.style.Circle({
-          radius: 4,
-          fill: new ol.style.Fill({
-            color: [255,255,255,1.0]
-          }),
-          stroke: new ol.style.Stroke({
-            color: [0,0,0,1.0],
-            width: 1
-          })
-        })
-      }),
-        new ol.style.Style({
-          image: new ol.style.Circle({
-            radius: 2,
-            fill: new ol.style.Fill({
-              color: [0,0,0,1.0]
-            }),
-            stroke: new ol.style.Stroke({
-              color: [0,0,0,1.0],
-              width: 1
-            })
-          })
-        }),
-        new ol.style.Style({
-          text: new ol.style.Text({
-            text: feature.get('name'),
-            offsetX: 10,
-            offsetY: 10,
-            font: 'bold 15px Arial',
-            fill: new ol.style.Fill({color: '#353535'}),
-            stroke: new ol.style.Stroke({color: '#ffffff', width: 4})
-          })
-        })
-      ]
-    }
-    if (resolution < 0.02) {
-      if (feature.get('featurecla')  != 'Admin-0 capital') {
-        return new ol.style.Style({
-          text: new ol.style.Text({
-            text: feature.get('name'),
-            offsetX: 10,
-            offsetY: 10,
-            font: 'bold 10px Arial',
-            fill: new ol.style.Fill({color: '#000000'}),
-            stroke: new ol.style.Stroke({color: '#ffffff', width: 3})
-          }),
-          image: new ol.style.Circle({
-            radius: 2,
-            fill: new ol.style.Fill({
-              color: [255,255,255,1.0]
-            }),
-            stroke: new ol.style.Stroke({
-              color: [0,0,0,1.0],
-              width: 1
-            })
-          })
-        })
-      }
     }
   },
   stati: new ol.style.Style({

@@ -1,11 +1,3 @@
-var view = new ol.View({
-  zoom: 6,
-  projection: "urn:ogc:def:crs:OGC:1.3:CRS84",
-  center: [11,43],
-  minZoom: 5
-});
-
-
 var container = document.getElementById('popup');
 var content = document.getElementById('popup-content');
 var closer = document.getElementById('popup-closer');
@@ -25,12 +17,23 @@ var overlay = new ol.Overlay({
   }
 });
 
+var view = new ol.View({
+  zoom: 6,
+  center: ol.proj.transform([11,43], "EPSG:4326", "EPSG:3857"),
+  minZoom: 5
+});
+
+var osm = new ol.layer.Tile({
+  source: new ol.source.OSM(),
+  minResolution: 0,
+  maxResolution: 1300
+});
 
 var map = new ol.Map({
   target: "map",
   view: view,
   overlays: [overlay],
-  layers: [reticolo_layer, stati_layer, city2_layer]
+  layers: [osm, reticolo_layer, stati_layer]
 });
 
 
@@ -44,11 +47,11 @@ map.on('click', function(evt) {
   var _feature = this.forEachFeatureAtPixel(pixel, function(feature, layer) {
     if (feature) {
       $('.ol-popup').show();
-      innerHTML = innerHTML +  '<div><span>Country: '+feature.get('Country')+'</span></div>';
-      innerHTML = innerHTML +  '<div><span>Population: '+feature.get('pop')+'</span></div>';
-      innerHTML = innerHTML +  '<div><span>PM 2.5 from all sources: '+feature.get('PM_REAL')+'</span></div>';
-      innerHTML = innerHTML +  '<div><span>Extra PM 2.5 from excess diesel NOx emissions: '+feature.get('PM_DIESEL')+'</span></div>';
-      innerHTML = innerHTML +  '<div><span>Approximate premature deaths dues to excess diesel NOx emissions: '+feature.get('PREM_DEATH')+'</span></div>';
+      innerHTML = innerHTML +  "<div><span>Country: "+feature.get('Country')+"</span></div>";
+      innerHTML = innerHTML +  "<div><span>Region's population: "+feature.get('pop')+"</span></div>";
+      innerHTML = innerHTML +  "<div><span>PM 2.5 from all sources: "+feature.get('PM_REAL')+"</span></div>";
+      innerHTML = innerHTML +  "<div><span>Extra PM 2.5 from excess diesel NOx emissions: "+feature.get('PM_DIESEL')+"</span></div>";
+      innerHTML = innerHTML +  "<div><span>Approximate premature deaths dues to excess diesel NOx emissions: "+feature.get('PREM_DEATH')+"</span></div>";
       content.innerHTML = innerHTML;
       overlay.setPosition(coordinate);
     }

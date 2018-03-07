@@ -22,22 +22,30 @@ html, body, #map {
 
 #legend {
     position: absolute;
-    bottom: 10px;
+    bottom: 20px;
     left: 10px;
     z-index: 1000;
-    background-color: #ffffff;
+    background-color: rgb(255, 255, 255);
     font-weight: bold;
     font-size: 0.7em;
     padding: 10px;
 }
 
+#gis3w {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    z-index: 1000;
+    font-size: 0.8em;
+}
+
 .legendfill {
     width: 60px;
     height: 20px;
+    border: 1px solid rgba(105,105,105, 0.8);
 }
 
 .legendclass {
-    display: inline-block;
     margin: 3px;
 }
 
