@@ -18,8 +18,8 @@ var overlay = new ol.Overlay({
 });
 
 var view = new ol.View({
-  zoom: 6,
-  center: ol.proj.transform([11,43], "EPSG:4326", "EPSG:3857"),
+  zoom: 5,
+  center: ol.proj.transform([11,50], "EPSG:4326", "EPSG:3857"),
   minZoom: 5
 });
 
