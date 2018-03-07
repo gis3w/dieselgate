@@ -217,10 +217,21 @@ var layers_styles = {
       })
     }
   },
-  stati: new ol.style.Style({
-    stroke: new ol.style.Stroke({
-      color: [227,26,28,1.0],
-      width: 2
+  stati: function (feature, resolution) {
+      return new ol.style.Style({
+        stroke: new ol.style.Stroke({
+          color: [227, 26, 28, 1.0],
+          width: 2
+        }),
+        text: new ol.style.Text({
+          font: 'bold 14px Arial',
+          text: feature.get('NAME'),
+          fill: new ol.style.Fill({color: '#000000'}),
+          stroke: new ol.style.Stroke({
+            color: '#ffffff',
+            width: 3
+          })
+        })
     })
-  })
+  }
 };
