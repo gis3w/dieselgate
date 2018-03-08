@@ -9,7 +9,7 @@ html, body, #map {
     position: relative;
     display: inline-block;
     position: absolute;
-    top: 30px;
+    top: 35px;
     left: 50px;
     z-index: 1000;
     font-weight: bold;
@@ -56,10 +56,70 @@ html, body, #map {
     position: relative;
     display: inline-block;
     position: absolute;
-    top: 10px;
+    top: 5px;
     right: 10px;
     z-index: 1000;
 }
+
+.select {
+    font-size: 16px;
+    position: relative;
+    display: inline-block;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    z-index: 1000;
+}
+
+.select select {
+    outline: none;
+    -webkit-appearance: none;
+    display: block;
+    padding: 5px 40px 5px 10px;
+    margin: 0;
+    transition: border-color 0.2s;
+    border: 1px solid #529dcc;
+    border-radius: 5px;
+    background: #fff;
+    color: #529dcc;
+    line-height: normal;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.select .arr {
+    background: #fff;
+    bottom: 5px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    pointer-events: none;
+}
+.select .arr:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    margin-top: -5px;
+    pointer-events: none;
+    border-top: 10px solid #529dcc;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+}
+
+.select .arr:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 28px;
+    margin-top: -5px;
+    pointer-events: none;
+    border-top: 6px solid #fff;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+}
+
 
 .ol-popup {
     position: absolute;
@@ -99,6 +159,18 @@ html, body, #map {
     position: absolute;
     top: 2px;
     right: 8px;
+}
+
+.ol-popup-closer {
+    text-decoration: none;
+    position: absolute;
+    top: 2px;
+    right: 8px;
+}
+
+.ol-popup-closer:after {
+    content: "✖";
+    color: #000000;
 }
 
 .info-ol-popup {
@@ -171,5 +243,8 @@ html, body, #map {
 .ol-attribution {
     bottom: 20px !important;
 }
+
+
+
 
 

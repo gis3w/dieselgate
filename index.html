@@ -80,6 +80,8 @@
       var value = $(this).find(":selected").val();
       change_reticolo_style(value);
       createLegend(value);
+      overlay.setPosition(undefined);
+      closer.blur();
     });
     createLegend(0);
   </script>
