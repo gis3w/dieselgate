@@ -24,7 +24,15 @@ var view = new ol.View({
 });
 
 var osm = new ol.layer.Tile({
-  source: new ol.source.OSM()
+  source: new ol.source.OSM({
+    source: new ol.source.OSM({
+      attribution: 'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+    })
+  })
+});
+
+var attribution = new ol.control.Attribution({
+  collapsible: true
 });
 
 var map = new ol.Map({
@@ -44,7 +52,25 @@ map.on('click', function(evt) {
   var _feature = this.forEachFeatureAtPixel(pixel, function(feature, layer) {
     if (feature) {
       $('.ol-popup').show();
-      innerHTML = innerHTML +  "<div class='info-ol-popup'><span>Region's population: </span><span style='font-weight: bold'>"+feature.get('pop')+"</span></div>";
+      var pop = feature.get('pop').toString();
+      var number_of_point = 0;
+      var other = 0;
+      if (pop.length > 3) {
+        number_of_point = parseInt(pop.length / 3);
+        other = pop.length % 3;
+        if (other == 0) {
+          number_of_point-= 1;
+        }
+        var elements = [];
+        const start_numbers = pop.length - (number_of_point*3);
+        elements.push(pop.substring(0, start_numbers))
+        for(i=0; i<number_of_point; i++) {
+          var start = start_numbers + i*3;
+          elements.push(pop.substring(start , start + 3))
+        }
+        pop = elements.join('.');
+      }
+      innerHTML = innerHTML +  "<div class='info-ol-popup'><span>Region's population: </span><span style='font-weight: bold'>"+pop+"</span></div>";
       innerHTML = innerHTML +  "<div class='info-ol-popup'><span>Excess PM 2.5 concentration due to NOx emissions from diesel cars above the EU limits (µg/m3) : </span><span style='font-weight: bold'>"+feature.get('PM_DIESEL')+"</span></div>";
       innerHTML = innerHTML +  "<div class='info-ol-popup'><span>Premature deaths due to Dieselgate: </span><span style='font-weight: bold'>"+feature.get('PREM_DEATH')+"</span></div>";
       content.innerHTML = innerHTML;

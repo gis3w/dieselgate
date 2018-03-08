@@ -169,7 +169,7 @@ html, body, #map {
        }
 }
 .ol-attribution {
-    display: none !important;
+    bottom: 20px !important;
 }
 
 
