@@ -180,7 +180,9 @@ html, body, #map {
     top: 2px;
     right: 8px;
 }
-
+.ol-zoom {
+    top: 35px !important;
+}
 .ol-popup-closer:after {
     content: "✖";
     color: #000000;
