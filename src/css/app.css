@@ -71,6 +71,7 @@ html, body, #map {
     top: 5px;
     left: 50px;
     z-index: 1000;
+    margin-right: 5px;
 }
 
 @media (max-width: 1200px) {
@@ -90,10 +91,16 @@ html, body, #map {
 
 @media (max-width: 400px) {
     .ol-zoom {
-        top: 100px !important;
+        top: 130px !important;
+        left: 5px !important;
     }
     .select {
         top: 100px;
+        left: 5px;
+        font-size: 12px;
+    }
+    .ol-attribution {
+        bottom: 130px !important;
     }
 }
 
@@ -118,9 +125,6 @@ html, body, #map {
     }
     .legenditemvisible {
         display: block !important;
-    }
-    .select {
-        font-size: 12px;
     }
 }
 
@@ -227,7 +231,7 @@ html, body, #map {
 }
 
 .ol-attribution {
-    bottom: 90px !important;
+    bottom: 90px;
 }
 
 .info-ol-popup {
