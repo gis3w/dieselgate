@@ -24,9 +24,7 @@ var view = new ol.View({
 });
 
 var osm = new ol.layer.Tile({
-  source: new ol.source.OSM(),
-  minResolution: 0,
-  maxResolution: 1300
+  source: new ol.source.OSM()
 });
 
 var map = new ol.Map({
@@ -35,7 +33,6 @@ var map = new ol.Map({
   overlays: [overlay],
   layers: [osm, reticolo_layer, stati_layer]
 });
-
 
 /**
  * Add a click handler to the map to render the popup.
@@ -47,9 +44,9 @@ map.on('click', function(evt) {
   var _feature = this.forEachFeatureAtPixel(pixel, function(feature, layer) {
     if (feature) {
       $('.ol-popup').show();
-      innerHTML = innerHTML +  "<div><span>Region's population: "+feature.get('pop')+"</span></div>";
-      innerHTML = innerHTML +  "<div><span>Excess PM 2.5 concentration due to NOx emissions from diesel cars above the EU limits (µg/m3) : "+feature.get('PM_DIESEL')+"</span></div>";
-      innerHTML = innerHTML +  "<div><span>Premature deaths due to Dieselgate: "+feature.get('PREM_DEATH')+"</span></div>";
+      innerHTML = innerHTML +  "<div class='info-ol-popup'><span>Region's population: </span><span style='font-weight: bold'>"+feature.get('pop')+"</span></div>";
+      innerHTML = innerHTML +  "<div class='info-ol-popup'><span>Excess PM 2.5 concentration due to NOx emissions from diesel cars above the EU limits (µg/m3) : </span><span style='font-weight: bold'>"+feature.get('PM_DIESEL')+"</span></div>";
+      innerHTML = innerHTML +  "<div class='info-ol-popup'><span>Premature deaths due to Dieselgate: </span><span style='font-weight: bold'>"+feature.get('PREM_DEATH')+"</span></div>";
       content.innerHTML = innerHTML;
       overlay.setPosition(coordinate);
     }

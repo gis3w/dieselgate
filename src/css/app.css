@@ -42,7 +42,7 @@ html, body, #map {
 }
 
 .legendfill {
-    width: 60px;
+    width: 80px;
     height: 20px;
     border: 1px solid rgba(105,105,105, 0.8);
 }
@@ -64,8 +64,7 @@ html, body, #map {
 .ol-popup {
     position: absolute;
     display: none;
-    font-weight: bold;
-    color: #529dcc;
+    color: #313131;
     background-color: #ffffff;
     -webkit-filter: drop-shadow(0 1px 4px rgba(0,0,0,0.2));
     filter: drop-shadow(0 1px 4px rgba(0,0,0,0.2));
@@ -73,7 +72,7 @@ html, body, #map {
     border-radius: 10px;
     bottom: 12px;
     left: -50px;
-    min-width: 300px;
+    min-width: 310px;
 }
 .ol-popup:after, .ol-popup:before {
     top: 100%;
@@ -100,6 +99,10 @@ html, body, #map {
     position: absolute;
     top: 2px;
     right: 8px;
+}
+
+.info-ol-popup {
+    margin-bottom: 10px;
 }
 
 #spinner-container {
