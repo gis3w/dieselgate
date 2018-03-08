@@ -23,7 +23,7 @@ html, body, #map {
 
 #legend {
     position: absolute;
-    bottom: 20px;
+    bottom: 5px;
     left: 10px;
     z-index: 1000;
     background-color: rgb(255, 255, 255);
@@ -108,8 +108,8 @@ html, body, #map {
 }
 
 @media (max-width: 960px){
-    #legend {
-        bottom: 100px
+    .legenditemvisible {
+        display: block !important;
     }
 }
 
