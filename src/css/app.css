@@ -102,6 +102,9 @@ html, body, #map {
     .ol-attribution {
         bottom: 130px !important;
     }
+    .legendfill {
+        height: 10px;
+    }
 }
 
 @media (max-width: 960px){
@@ -121,7 +124,7 @@ html, body, #map {
 
 @media (max-width: 610px){
     #legend {
-        bottom: 115px
+        bottom: 120px
     }
     .legenditemvisible {
         display: block !important;
