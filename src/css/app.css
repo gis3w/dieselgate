@@ -9,14 +9,13 @@ html, body, #map {
     position: relative;
     display: inline-block;
     position: absolute;
-    top: 35px;
-    left: 50px;
-    z-index: 1000;
+    top: 5px;
+    right: 10px;
+    z-index: 1001;
     font-weight: bold;
     font-size: 1.3em;
     color: #529dcc;
     padding: 5px;
-    margin: 5px;
     background-color: #ffffff;
     border-radius: 5px;
     border: 1px solid #529dcc;
@@ -65,23 +64,59 @@ html, body, #map {
 }
 
 .select {
-    font-size: 12px;
-    position: relative;
-    display: inline-block;
-    position: absolute;
-    top: 5px;
-    right: 10px;
-    z-index: 1000;
-}
-
-.select {
     font-size: 16px;
     position: relative;
     display: inline-block;
     position: absolute;
     top: 5px;
-    right: 10px;
+    left: 50px;
     z-index: 1000;
+}
+
+@media (max-width: 1200px) {
+    .select {
+        top: 40px;
+    }
+}
+
+@media (max-width: 862px) {
+    .ol-zoom {
+        top: 80px !important;
+    }
+    .select {
+        top: 80px;
+    }
+}
+
+@media (max-width: 400px) {
+    .ol-zoom {
+        top: 100px !important;
+    }
+    .select {
+        top: 100px;
+    }
+}
+
+@media (max-width: 960px){
+    #legend {
+        bottom: 100px
+    }
+}
+
+@media (max-width: 1100px){
+    .legendfill {
+        width: 50px;
+    }
+    #legend {
+        font-size: 0.6em;
+    }
+}
+
+@media (max-width: 610px){
+
+    .legenditemvisible {
+        display: block !important;
+    }
 }
 
 .select select {
@@ -180,16 +215,14 @@ html, body, #map {
     top: 2px;
     right: 8px;
 }
-.ol-zoom {
-    top: 35px !important;
-}
+
 .ol-popup-closer:after {
     content: "✖";
     color: #000000;
 }
 
 .ol-attribution {
-    bottom: 120px !important;
+    bottom: 90px !important;
 }
 
 .info-ol-popup {
