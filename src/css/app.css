@@ -113,9 +113,14 @@ html, body, #map {
 }
 
 @media (max-width: 610px){
-
+    #legend {
+        bottom: 120px
+    }
     .legenditemvisible {
         display: block !important;
+    }
+    .select {
+        font-size: 12px;
     }
 }
 
