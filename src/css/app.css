@@ -121,7 +121,7 @@ html, body, #map {
 
 @media (max-width: 610px){
     #legend {
-        bottom: 120px
+        bottom: 115px
     }
     .legenditemvisible {
         display: block !important;
