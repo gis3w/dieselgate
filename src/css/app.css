@@ -36,7 +36,7 @@ html, body, #map {
 #contributors {
     position: absolute;
     padding: 10px;
-    bottom: 40px;
+    bottom: 5px;
     background-color: #ffffff;
     right: 10px;
     z-index: 1000;
@@ -186,6 +186,10 @@ html, body, #map {
     color: #000000;
 }
 
+.ol-attribution {
+    bottom: 120px !important;
+}
+
 .info-ol-popup {
     margin-bottom: 10px;
 }
@@ -253,9 +257,7 @@ html, body, #map {
            -webkit-transform: scaleY(1.0);
        }
 }
-.ol-attribution {
-    bottom: 5px !important;
-}
+
 
 
 
