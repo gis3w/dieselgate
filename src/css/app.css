@@ -16,6 +16,7 @@ html, body, #map {
     font-size: 1.3em;
     color: #529dcc;
     padding: 5px;
+    margin-left: 10px;
     background-color: #ffffff;
     border-radius: 5px;
     border: 1px solid #529dcc;
