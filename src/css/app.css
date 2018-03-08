@@ -33,12 +33,25 @@ html, body, #map {
     padding: 10px;
 }
 
-#gis3w {
+#contributors {
     position: absolute;
-    bottom: 5px;
+    padding: 10px;
+    bottom: 40px;
+    background-color: #ffffff;
     right: 10px;
     z-index: 1000;
+    border-radius: 5px;
+    color: #529dcc;
+    font-weight: 800;
     font-size: 0.8em;
+}
+#contributors a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#contributors img {
+    height: 50px;
 }
 
 .legendfill {
@@ -241,7 +254,7 @@ html, body, #map {
        }
 }
 .ol-attribution {
-    bottom: 20px !important;
+    bottom: 5px !important;
 }
 
 
