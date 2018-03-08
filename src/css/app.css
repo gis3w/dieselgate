@@ -86,14 +86,18 @@ html, body, #map {
         height: 5px !important;
         width: 30px !important;
     }
+    .ol-zoom-in, .ol-zoom-out {
+        height: 20px !important;
+        width: 20px !important;
+    }
 }
 
 @media (max-width: 862px) {
     .ol-zoom {
-        top: 80px !important;
+        top: 65px !important;
     }
     .select {
-        top: 80px;
+        top: 65px;
     }
 }
 
