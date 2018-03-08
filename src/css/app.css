@@ -80,6 +80,13 @@ html, body, #map {
     }
 }
 
+@media (max-height: 400px) {
+    .legendfill {
+        height: 5px !important;
+        width: 30px !important;
+    }
+}
+
 @media (max-width: 862px) {
     .ol-zoom {
         top: 80px !important;
