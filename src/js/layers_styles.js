@@ -17,7 +17,7 @@ var reticolo_dati_labels_colors = [
   }
 ];
 
-var borders_color = 'rgba( 0,0,0, 0.8 )';
+var borders_color = 'rgba( 105,105,105, 0.8 )';
 
 var layers_styles = {
   reticolo_dati_0: function (feature, resolution) {
