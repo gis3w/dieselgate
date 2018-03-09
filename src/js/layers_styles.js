@@ -17,7 +17,7 @@ var reticolo_dati_labels_colors = [
   }
 ];
 
-var borders_color = 'rgba( 105,105,105, 0.30 )';
+var borders_color = 'rgba( 0,0,0, 0.8 )';
 
 var layers_styles = {
   reticolo_dati_0: function (feature, resolution) {
@@ -27,7 +27,8 @@ var layers_styles = {
           color: reticolo_dati_labels_colors[0].fill[0]
         }),
         stroke: new ol.style.Stroke({
-          color: borders_color
+          color: borders_color,
+          width: 1
         })
       })
     } else if (feature.get('PREM_DEATH') >= 12.00 && feature.get('PREM_DEATH') < 50.000 ) {
@@ -36,7 +37,8 @@ var layers_styles = {
           color: reticolo_dati_labels_colors[0].fill[1]
         }),
         stroke: new ol.style.Stroke({
-          color:borders_color
+          color:borders_color,
+          width: 1
         })
       })
     } else if (feature.get('PREM_DEATH') >= 50.000 && feature.get('PREM_DEATH') <= 120.000 ) {
@@ -45,7 +47,8 @@ var layers_styles = {
           color: reticolo_dati_labels_colors[0].fill[2]
         }),
         stroke: new ol.style.Stroke({
-          color: borders_color
+          color: borders_color,
+          width: 1
         })
       })
     }
@@ -57,7 +60,8 @@ var layers_styles = {
           color: reticolo_dati_labels_colors[1].fill[0]
         }),
         stroke: new ol.style.Stroke({
-          color: borders_color
+          color: borders_color,
+          width: 1
         })
       })
     } else if (feature.get('PREM_DEATH') >= 1.0 && feature.get('PREM_DEATH') < 3.0 ) {
@@ -66,7 +70,8 @@ var layers_styles = {
           color: reticolo_dati_labels_colors[1].fill[1]
         }),
         stroke: new ol.style.Stroke({
-          color: borders_color
+          color: borders_color,
+          width: 1
         })
       })
     } else if (feature.get('PREM_DEATH') >= 3.0 && feature.get('PREM_DEATH') < 7.0 ) {
@@ -75,7 +80,8 @@ var layers_styles = {
           color: reticolo_dati_labels_colors[1].fill[2]
         }),
         stroke: new ol.style.Stroke({
-          color: borders_color
+          color: borders_color,
+          width: 1
         })
       })
     } else if (feature.get('PREM_DEATH') >= 7.0 && feature.get('PREM_DEATH') < 12.0 ) {
@@ -84,7 +90,8 @@ var layers_styles = {
           color: reticolo_dati_labels_colors[1].fill[3]
         }),
         stroke: new ol.style.Stroke({
-          color: borders_color
+          color: borders_color,
+          width: 1
         })
       })
     } else if (feature.get('PREM_DEATH') >= 12.0 && feature.get('PREM_DEATH') < 50.0 ) {
@@ -93,7 +100,8 @@ var layers_styles = {
           color: reticolo_dati_labels_colors[1].fill[4]
         }),
         stroke: new ol.style.Stroke({
-          color: borders_color
+          color: borders_color,
+          width: 1
         })
       })
     } else if (feature.get('PREM_DEATH') >= 50.0 && feature.get('PREM_DEATH') <= 120.0 ) {
@@ -102,7 +110,8 @@ var layers_styles = {
           color: reticolo_dati_labels_colors[1].fill[5]
         }),
         stroke: new ol.style.Stroke({
-          color:borders_color
+          color: borders_color,
+          width: 1
         })
       })
     }
@@ -114,7 +123,8 @@ var layers_styles = {
           color: reticolo_dati_labels_colors[2].fill[0]
         }),
         stroke: new ol.style.Stroke({
-          color: borders_color
+          color: borders_color,
+          width: 1
         })
       })
     } else if (feature.get('PM_DIESEL') >= 0.050 && feature.get('PM_DIESEL') < 0.100 ) {
@@ -123,7 +133,8 @@ var layers_styles = {
           color: reticolo_dati_labels_colors[2].fill[1]
         }),
         stroke: new ol.style.Stroke({
-          color: borders_color
+          color: borders_color,
+          width: 1
         })
       })
     } else if (feature.get('PM_DIESEL') >= 0.100 && feature.get('PM_DIESEL') < 0.200 ) {
@@ -132,7 +143,8 @@ var layers_styles = {
           color: reticolo_dati_labels_colors[2].fill[2]
         }),
         stroke: new ol.style.Stroke({
-          color: borders_color
+          color: borders_color,
+          width: 1
         })
       })
     } else if (feature.get('PM_DIESEL') >= 0.200 && feature.get('PM_DIESEL') < 0.500) {
@@ -141,7 +153,8 @@ var layers_styles = {
           color: reticolo_dati_labels_colors[2].fill[3]
         }),
         stroke: new ol.style.Stroke({
-          color: borders_color
+          color: borders_color,
+          width: 1
         })
       })
     } else if (feature.get('PM_DIESEL') >= 0.500 && feature.get('PM_DIESEL') <= 1.030 ) {
@@ -150,7 +163,8 @@ var layers_styles = {
           color: reticolo_dati_labels_colors[2].fill[4]
         }),
         stroke: new ol.style.Stroke({
-          color: borders_color
+          color: borders_color,
+          width: 1
         })
       })
     }
@@ -162,7 +176,8 @@ var layers_styles = {
           color: reticolo_dati_labels_colors[3].fill[0]
         }),
         stroke: new ol.style.Stroke({
-          color: borders_color
+          color: borders_color,
+          width: 1
         })
       })
     }
@@ -172,7 +187,8 @@ var layers_styles = {
           color: reticolo_dati_labels_colors[3].fill[1]
         }),
         stroke: new ol.style.Stroke({
-          color: borders_color
+          color: borders_color,
+          width: 1
         })
       })
     }
@@ -182,7 +198,8 @@ var layers_styles = {
           color: reticolo_dati_labels_colors[3].fill[2]
         }),
         stroke: new ol.style.Stroke({
-          color: borders_color
+          color: borders_color,
+          width: 1
         })
       })
     }
@@ -192,7 +209,8 @@ var layers_styles = {
           color: reticolo_dati_labels_colors[3].fill[3]
         }),
         stroke: new ol.style.Stroke({
-          color: borders_color
+          color: borders_color,
+          width: 1
         })
       })
     }
@@ -202,7 +220,8 @@ var layers_styles = {
           color: reticolo_dati_labels_colors[3].fill[4]
         }),
         stroke: new ol.style.Stroke({
-          color: borders_color
+          color: borders_color,
+          width: 1
         })
       })
     }
@@ -212,7 +231,8 @@ var layers_styles = {
           color: reticolo_dati_labels_colors[3].fill[5]
         }),
         stroke: new ol.style.Stroke({
-          color: borders_color
+          color: borders_color,
+          width: 1
         })
       })
     }

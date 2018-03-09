@@ -57,7 +57,7 @@ html, body, #map {
 .legendfill {
     width: 80px;
     height: 20px;
-    border: 1px solid rgba(105,105,105, 0.8);
+    border: 1px solid rgba( 0,0,0, 0.8);
 }
 
 .legendclass {
@@ -90,24 +90,22 @@ html, body, #map {
         height: 20px !important;
         width: 20px !important;
     }
-}
-
-@media (max-width: 862px) {
-    .ol-zoom {
-        top: 65px !important;
+    #legend {
+        display: none;
     }
-    .select {
-        top: 65px;
+    #contributors {
+        font-size: 0.5em;
     }
 }
 
-@media (max-width: 400px) {
+
+@media (max-width: 550px) {
     .ol-zoom {
-        top: 130px !important;
+        top: 100px !important;
         left: 5px !important;
     }
     .select {
-        top: 100px;
+        top: 70px;
         left: 5px;
         font-size: 12px;
     }
@@ -116,6 +114,20 @@ html, body, #map {
     }
     .legendfill {
         height: 10px;
+    }
+    .ol-popup {
+        max-width: 250px !important;
+        min-width: 0 !important;
+        font-size: 10px;
+    }
+    #contributors {
+        font-size: 0.5em;
+    }
+}
+
+@media (max-width: 400px) {
+    #legend {
+        display: none;
     }
 }
 
@@ -135,9 +147,6 @@ html, body, #map {
 }
 
 @media (max-width: 610px){
-    #legend {
-        bottom: 120px
-    }
     .legenditemvisible {
         display: block !important;
     }

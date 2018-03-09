@@ -71,8 +71,8 @@ map.on('click', function(evt) {
         pop = elements.join('.');
       }
       innerHTML = innerHTML +  "<div class='info-ol-popup'><span>Region's population: </span><span style='font-weight: bold'>"+pop+"</span></div>";
-      innerHTML = innerHTML +  "<div class='info-ol-popup'><span>Excess PM 2.5 concentration due to NOx emissions from diesel cars above the EU limits (µg/m3) : </span><span style='font-weight: bold'>"+feature.get('PM_DIESEL')+"</span></div>";
-      innerHTML = innerHTML +  "<div class='info-ol-popup'><span>Premature deaths due to Dieselgate: </span><span style='font-weight: bold'>"+feature.get('PREM_DEATH')+"</span></div>";
+      innerHTML = innerHTML +  "<div class='info-ol-popup'><span>Excess PM 2.5 concentration due to NOx emissions from diesel cars above the EU limits (µg/m3) : </span><span style='font-weight: bold'>"+parseFloat(feature.get('PM_DIESEL')).toFixed(2)+"</span></div>";
+      innerHTML = innerHTML +  "<div class='info-ol-popup'><span>Premature deaths due to Dieselgate: </span><span style='font-weight: bold'>"+parseInt(feature.get('PREM_DEATH'))+"</span></div>";
       content.innerHTML = innerHTML;
       overlay.setPosition(coordinate);
     }
