@@ -240,8 +240,8 @@ var layers_styles = {
   stati: function (feature, resolution) {
       return new ol.style.Style({
         stroke: new ol.style.Stroke({
-          color: '#444',
-          width: 2
+          color: '#7d7d7d',
+          width: 1
         }),
         text: new ol.style.Text({
           font: 'bold 14px Arial',
